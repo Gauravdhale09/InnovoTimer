@@ -130,12 +130,23 @@ const Timer = () => {
               fontFamily: "Roboto",
               fontStyle: "normal",
               fontWeight: "bolder",
+              fontSize: "3.8rem",
+              lineHeight: "1",
+              letterSpacing: "-0.035em",
             }}
           >
-            Innovo 2025
+            Innovo 2K25
           </h1>
           <img src={curve} alt="curve" width={400} height={20} />
-          <h2 className="lead display-4 fw-bold text-4xl">Hackathon</h2>
+          <h2 className="lead display-4 fw-bold text-4xl"
+          style={{
+            fontFamily: "Roboto",
+            fontStyle: "normal",
+            fontWeight: "bolder",
+            fontSize: "3rem",
+            lineHeight: "1",
+            letterSpacing: "-0.035em",
+          }}>Hackathon</h2>
         </header>
         <div className="home-theme container text-center mt-1">
           <div className="card p-5 shadow-lg mt-3 bg-dark text-white .bg-dark">
