@@ -1,0 +1,44 @@
+/* home.css */
+body {
+    background-color: #f8f9fa; /* Light background for better contrast */
+  }
+  
+  .container {
+    margin-top: 50px;
+  }
+  
+  .card {
+    border-radius: 15px; /* Rounded corners for cards */
+  }
+  
+  .header {
+    background: linear-gradient(90deg, rgba(0, 123, 255, 1) 0%, rgba(0, 255, 255, 1) 100%); /* Gradient background */
+    color: white;
+    border-radius: 15px 15px 0 0; /* Rounded top corners */
+  }
+  
+  .table {
+    border-radius: 10px; /* Rounded corners for table */
+    overflow: hidden; /* Prevent overflow */
+  }
+  
+  .table th, .table td {
+    vertical-align: middle; /* Center align text */
+  }
+  
+  .btn {
+    border-radius: 20px; /* Rounded buttons */
+  }
+  
+  .modal-content {
+    border-radius: 15px; /* Rounded modal */
+  }
+  
+  .modal-header {
+    background-color: #007bff; /* Primary color for modal header */
+    color: white;
+  }
+  
+  .modal-body {
+    background-color: #f1f1f1; /* Light background for modal body */
+  }
