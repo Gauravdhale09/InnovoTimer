@@ -23,8 +23,8 @@ function App() {
     <div>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<PrivateRoute element={<Home />} />} />
-        <Route path="/timer" element={<PrivateRoute element={<Timer />} />} />
+        <Route path="/" element={<PrivateRoute element={<Timer />} />} />
+        {/* <Route path="/timer" element={<PrivateRoute element={<Timer />} />} /> */}
       </Routes>
     </div>
   );

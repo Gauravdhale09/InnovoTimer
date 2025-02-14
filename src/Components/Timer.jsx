@@ -8,7 +8,6 @@ import backgroundVideo from "../assets/images/background3.mp4"; // Add your vide
 import "../assets/css/timer.css";
 import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
 import "@leenguyen/react-flip-clock-countdown/dist/index.css";
-
 const Timer = () => {
   const [time, setTime] = useState(0);
   const [hours, setHours] = useState("");
@@ -17,6 +16,7 @@ const Timer = () => {
   const [isRunning, setIsRunning] = useState(false);
   const [totalTime, setTotalTime] = useState(0);
   const [modal, setModal] = useState(false);
+  const correctPIN = "8987";
 
   useEffect(() => {
     const savedData = JSON.parse(localStorage.getItem("timerData"));
@@ -49,7 +49,7 @@ const Timer = () => {
     return () => clearInterval(timer);
   }, [time, isRunning, totalTime]);
 
-  const startTimer = () => {
+  const startTimer = async () => {
     const h = parseInt(hours) || 0;
     const m = parseInt(minutes) || 0;
     const s = parseInt(seconds) || 0;
@@ -70,13 +70,20 @@ const Timer = () => {
       );
     }
   };
-
-  const stopTimer = () => {
+  const stop = () => {
     setIsRunning(false);
     localStorage.setItem(
       "timerData",
       JSON.stringify({ time, totalTime, isRunning: false })
     );
+  };
+  const stopTimer = () => {
+    const enteredPIN = window.prompt("Enter PIN to Stop Timer:");
+    if (enteredPIN === correctPIN) {
+      stop();
+    }else {
+      return
+    }
   };
 
   const resumeTimer = () => {
@@ -87,7 +94,7 @@ const Timer = () => {
     );
   };
 
-  const removeTimer = () => {
+  const remove = () => {
     setTime(0);
     setHours("");
     setMinutes("");
@@ -95,6 +102,15 @@ const Timer = () => {
     setIsRunning(false);
     setTotalTime(0);
     localStorage.removeItem("timerData");
+  };
+  const removeTimer = () => {
+    const enteredPIN = window.prompt("Enter PIN to Remove Timer:");
+    if (enteredPIN === correctPIN) {
+      remove();
+    } else {
+      return;
+    }
+    
   };
 
   const formatTime = (seconds) => {
